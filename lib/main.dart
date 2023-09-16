@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:palach/view/bottom_navigation/bottom_nav_page.dart';
 import 'package:palach/view/home_page.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavigation(),
+      home: AccaountPage(),
     );
   }
 }
