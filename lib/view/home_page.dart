@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,28 +10,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int son = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('APP')),
-      body: Center(
-        child: Text(son.toString(),
-            style: TextStyle(fontSize: 50, color: Colors.deepPurple)),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          orttit();
-          setState(() {});
-        },
-        child: Text('PRESS'),
-      ),
+      appBar: AppBar(title: Text('App')),
+      body: ListView.builder(itemBuilder: (context, index) {
+        return ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage('https://source.unsplash.com/random/$index'),
+          ),
+          title: Text('Users'),
+          subtitle: Text(index.toString()),
+        );
+      },),
     );
-  }
-
-  orttit() {
-    son++;
-    print(son);
   }
 }
